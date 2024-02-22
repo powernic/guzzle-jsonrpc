@@ -1,8 +1,8 @@
 {
-    "name": "graze/guzzle-jsonrpc",
-    "description": "JSON-RPC 2.0 client for Guzzle",
+    "name": "powernic/guzzle-jsonrpc",
+    "description": "JSON-RPC 2.0 client for Guzzle, thanks for graze/guzzle-jsonrpc",
     "keywords": ["guzzle", "guzzlehttp", "http", "json", "json-rpc", "jsonrpc", "ring", "rpc"],
-    "homepage": "https://github.com/graze/guzzle-jsonrpc",
+    "homepage": "https://github.com/powernic/guzzle-jsonrpc",
     "license": "MIT",
     "type": "library",
     "config": {
@@ -31,8 +31,8 @@
         }
     },
     "require": {
-        "php": ">=5.5|^7.0",
-        "guzzlehttp/guzzle": "^6.0",
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^7.2",
         "guzzlehttp/promises": "^1.0",
         "psr/http-message": "^1.0"
     },
