@@ -23,7 +23,7 @@ class RequestHeaderMiddlewareTest extends UnitTestCase
     /** @var RequestHeaderMiddleware */
     private $middleware;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->request = $this->mockRequest();
         $this->response = $this->mockResponse();

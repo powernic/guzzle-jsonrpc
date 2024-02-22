@@ -57,7 +57,7 @@ interface ClientInterface
      *
      * @return RequestInterface
      */
-    public function request($id, $method, array $params = null);
+    public function request(mixed $id, string $method, array $params = null);
 
     /**
      * Send a request.

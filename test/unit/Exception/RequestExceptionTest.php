@@ -14,6 +14,7 @@
 namespace Graze\GuzzleHttp\JsonRpc\Exception;
 
 use Graze\GuzzleHttp\JsonRpc\Test\UnitTestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class RequestExceptionTest extends UnitTestCase
 {
@@ -22,7 +23,7 @@ class RequestExceptionTest extends UnitTestCase
     /** @var mixed */
     private $response;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->request = $this->mockRequest();
         $this->response = $this->mockResponse();
@@ -31,7 +32,7 @@ class RequestExceptionTest extends UnitTestCase
     /**
      * @return array
      */
-    public function dataCreateClientException()
+    public static function dataCreateClientException()
     {
         return [[-32600], [-32601], [-32602], [-32700]];
     }
@@ -39,17 +40,17 @@ class RequestExceptionTest extends UnitTestCase
     /**
      * @return array
      */
-    public function dataCreateServerException()
+    public static function dataCreateServerException()
     {
         return [[-32603], [-32000], [-32099], [-10000]];
     }
 
+    #[DataProvider("dataCreateClientException")]
     /**
-     * @dataProvider dataCreateClientException
-     *
      * @param int $code
+     * @return void
      */
-    public function testCreateClientException($code)
+    public function testCreateClientException(int $code)
     {
         $this->request->shouldReceive('getRequestTarget')->once()->withNoArgs()->andReturn('http://foo');
         $this->request->shouldReceive('getRpcMethod')->once()->withNoArgs()->andReturn('foo');
@@ -61,12 +62,12 @@ class RequestExceptionTest extends UnitTestCase
         $this->assertInstanceOf('Graze\GuzzleHttp\JsonRpc\Exception\ClientException', $exception);
     }
 
+    #[DataProvider("dataCreateServerException")]
     /**
-     * @dataProvider dataCreateServerException
-     *
      * @param int $code
+     * @return void
      */
-    public function testCreateServerException($code)
+    public function testCreateServerException(int $code)
     {
         $this->request->shouldReceive('getRequestTarget')->once()->withNoArgs()->andReturn('http://foo');
         $this->request->shouldReceive('getRpcMethod')->once()->withNoArgs()->andReturn('foo');

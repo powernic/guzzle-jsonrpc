@@ -1,28 +1,19 @@
-<phpunit bootstrap="./vendor/autoload.php"
-         colors="true"
-         stopOnError="true"
-         stopOnFailure="true">
-
-    <!-- Test suites -->
-    <testsuites>
-        <testsuite name="functional">
-            <directory suffix="FunctionalTest.php">./test/functional</directory>
-        </testsuite>
-        <testsuite name="unit">
-            <directory suffix="Test.php">./test/unit</directory>
-        </testsuite>
-    </testsuites>
-
-    <!-- Coverage filter -->
-    <filter>
-        <whitelist>
-            <directory>./src</directory>
-        </whitelist>
-    </filter>
-
-    <!-- Listeners -->
-    <listeners>
-        <listener class="Mockery\Adapter\Phpunit\TestListener"/>
-    </listeners>
-
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./vendor/autoload.php" colors="true" stopOnError="true" stopOnFailure="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <!-- Test suites -->
+  <testsuites>
+    <testsuite name="functional">
+      <directory suffix="FunctionalTest.php">./test/functional</directory>
+    </testsuite>
+    <testsuite name="unit">
+      <directory suffix="Test.php">./test/unit</directory>
+    </testsuite>
+  </testsuites>
+  <!-- Coverage filter -->
+  <!-- Listeners -->
+  <source>
+    <include>
+      <directory>./src</directory>
+    </include>
+  </source>
 </phpunit>

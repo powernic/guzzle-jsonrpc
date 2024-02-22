@@ -21,7 +21,7 @@ class RequestFunctionalTest extends FunctionalTestCase
     /** @var Client */
     private $client;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = $this->createClient();
     }
@@ -197,10 +197,6 @@ class RequestFunctionalTest extends FunctionalTestCase
             $this->assertEquals(null, $response->getRpcErrorData());
         })->wait();
     }
-
-    /**
-     * @expectedException \Graze\GuzzleHttp\JsonRpc\Exception\ClientException
-     */
     public function testBarRequestThrows()
     {
         $id = 'abc';
@@ -212,7 +208,7 @@ class RequestFunctionalTest extends FunctionalTestCase
         $this->assertEquals($id, $request->getRpcId());
         $this->assertEquals($method, $request->getRpcMethod());
         $this->assertEquals(null, $request->getRpcParams());
-
+        $this->expectException(ClientException::class);
         $client->send($request);
     }
 

@@ -12,6 +12,6 @@
  * @link http://github.com/graze/guzzle-jsonrpc
  */
 
-if (! function_exists('Graze\GuzzleHttp\JsonRpc\json_encode')) {
+if (!function_exists('Graze\GuzzleHttp\JsonRpc\json_encode')) {
     require __DIR__ . '/functions.php';
 }

@@ -86,7 +86,7 @@ class MessageFactory implements MessageFactoryInterface
      */
     protected function addIdToRequest($method, array $data)
     {
-        if (RequestInterface::REQUEST === $method && ! isset($data['id'])) {
+        if (RequestInterface::REQUEST === $method && !isset($data['id'])) {
             $data['id'] = uniqid(true);
         }
 

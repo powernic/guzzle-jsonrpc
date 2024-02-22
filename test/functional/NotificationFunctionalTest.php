@@ -20,7 +20,7 @@ class NotificationFunctionalTest extends FunctionalTestCase
     /** @var Client */
     private $client;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = $this->createClient();
     }

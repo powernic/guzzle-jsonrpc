@@ -66,7 +66,7 @@ function json_decode($json, $assoc = false, $depth = 512, $options = 0)
  *
  * @return string|bool
  */
-function json_encode($data, $escapeChars = true)
+function json_encode(mixed $data, bool $escapeChars = true)
 {
     $options =
         JSON_HEX_AMP  |

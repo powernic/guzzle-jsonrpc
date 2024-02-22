@@ -20,7 +20,7 @@ class MessageFactoryTest extends UnitTestCase
     /** @var MessageFactory */
     private $factory;
 
-    public function setup()
+    public function setup(): void
     {
         $this->factory = new MessageFactory();
     }

@@ -25,7 +25,7 @@ class RequestFactoryMiddlewareTest extends UnitTestCase
     /** @var RequestFactoryMiddleware */
     private $middleware;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->request = $this->mockRequest();
         $this->response = $this->mockResponse();

@@ -10,10 +10,10 @@ deps-js: ## Install javascript dependencies
 	@docker-compose run --rm node yarn install
 
 deps-php: ## Install php dependencies
-	@docker-compose run --rm composer install --prefer-dist
+	@docker-compose run --rm composer install --prefer-dist --ignore-platform-reqs
 
 deps-php-update: ## Update php dependencies
-	@docker-compose run --rm composer update --prefer-dist
+	@docker-compose run --rm composer update --prefer-dist --ignore-platform-reqs
 
 server-start: ## Start the test server
 	@docker-compose up -d node

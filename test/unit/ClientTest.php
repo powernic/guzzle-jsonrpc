@@ -27,7 +27,7 @@ class ClientTest extends UnitTestCase
     /** @var Client */
     private $client;
 
-    public function setup()
+    public function setup(): void
     {
         $this->httpClient = $this->mockHttpClient();
         $this->httpHandler = $this->mockHttpHandler();

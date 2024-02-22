@@ -1,10 +1,3 @@
-# [ABANDONED] Guzzle JSON-RPC
-
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
-
-### This is no longer supported, please consider forking this repository to make any desired changes.
-
-[![Master branch build status][ico-build]][travis]
 [![Coverage Status][ico-coverage]][coverage]
 [![Quality Score][ico-quality]][quality]
 [![Published version][ico-package]][package]
@@ -24,7 +17,7 @@ It can be installed in whichever way you prefer, but we recommend [Composer][pac
 ```json
 {
     "require": {
-        "graze/guzzle-jsonrpc": "~3.0"
+        "powernic/guzzle-jsonrpc": "~3.0"
     }
 }
 ```
